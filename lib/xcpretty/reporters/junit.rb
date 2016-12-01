@@ -43,6 +43,7 @@ module XCPretty
       test_node = suite(classname).add_element('testcase')
       test_node.attributes['classname'] = classname
       test_node.attributes['name']      = test_case
+      test_node.attributes['time']      = "0"
       test_node.add_element('skipped')
       @test_count += 1
     end
@@ -51,6 +52,7 @@ module XCPretty
       test_node = suite(classname).add_element('testcase')
       test_node.attributes['classname'] = classname
       test_node.attributes['name']      = test_case
+      test_node.attributes['time']      = "0"
       fail_node = test_node.add_element('failure')
       fail_node.attributes['message'] = reason
       fail_node.text = file.sub(@directory + '/', '')
